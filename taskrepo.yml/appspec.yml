@@ -1,0 +1,15 @@
+Install dependencies:
+#!/bin/bash
+yum install -y nginx
+rm -f /usr/share/nginx/html/index.html
+
+Start Server:
+#!/bin/bash
+service nginx start
+
+Stop Server:
+#!/bin/bash
+isExistApp = `pgrep nginx`
+if [[ -n  $isExistApp ]]; then
+    service nginx stop        
+fi
